@@ -1,0 +1,4 @@
+# Prevents database login information from being made public via Github
+django_project/settings.py
+django_project/settings.pyc
+django_project/settings.pye
