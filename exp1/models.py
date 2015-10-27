@@ -1,14 +1,14 @@
 from django.db import models
 
 class Persona(models.Model):
-	statements = models.ManyToManyField('Statement')
+	statements = models.ManyToManyField('statement')
 	# values = models.ManyToManyField('value') # This will come later.
 
 class Prompt(models.Model):
 	content = CharField(max_length=None)
 	
 class Statement(models.Model):
-	prompt = models.ForeignKey("Prompt")
+	prompt = models.ForeignKey('prompt')
 	message = CharField(max_length=None)
 	source = URLField(max_length=600)
 	timestamp = DateField(auto_now=False)
