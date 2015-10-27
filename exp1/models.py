@@ -1,15 +1,15 @@
 from django.db import models
 
 class Prompt(models.Model):
-	content = CharField(max_length=600)
+	content = models.CharField(max_length=600)
 	
 class Statement(models.Model):
 	prompt = models.ForeignKey(Prompt)
-	message = CharField(max_length=1000)
-	source = URLField(max_length=600)
-	timestamp = DateField(auto_now=False)
-	meaningcloud_sentiment_request = CharField(max_length=1200)
-	meaningcloud_sentiment_response = CharField(max_length=8000)
+	message = models.CharField(max_length=1000)
+	source = models.URLField(max_length=600)
+	timestamp = models.DateField(auto_now=False)
+	meaningcloud_sentiment_request = models.CharField(max_length=1200)
+	meaningcloud_sentiment_response = models.CharField(max_length=8000)
 	
 class Persona(models.Model):
 	statements = models.ManyToManyField(Statement)
