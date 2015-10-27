@@ -8,7 +8,7 @@ class Prompt(models.Model):
 	content = CharField(max_length=None)
 	
 class Statement(models.Model):
-	prompt = models.ForeignKey('Prompt')
+	prompt = models.ForeignKey("Prompt")
 	message = CharField(max_length=None)
 	source = URLField(max_length=600)
 	timestamp = DateField(auto_now=False)
