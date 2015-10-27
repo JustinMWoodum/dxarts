@@ -1,9 +1,5 @@
 from django.db import models
 
-class Persona(models.Model):
-	statements = models.ManyToManyField(Statement)
-	# values = models.ManyToManyField(Value) # This will come later.
-
 class Prompt(models.Model):
 	content = CharField(max_length=None)
 	
@@ -14,6 +10,10 @@ class Statement(models.Model):
 	timestamp = DateField(auto_now=False)
 	meaningcloud_sentiment_request = CharField(max_length=None)
 	meaningcloud_sentiment_response = CharField(max_length=None)
+	
+class Persona(models.Model):
+	statements = models.ManyToManyField(Statement)
+	# values = models.ManyToManyField(Value) # This will come later.	
 	
 '''
 This will come later.
